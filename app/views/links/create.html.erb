@@ -1,0 +1,24 @@
+<div class="flex flex-col">
+  <script>
+    function copyToCB () {
+      var contents = document.getElementById("result-url");
+      contents.select();
+
+      navigator.clipboard.writeText(contents.value);
+    }
+  </script>
+  <div> Your link is ready! </div>
+  <input class="hidden" type="text" value="<%= @shortened_link %>" id="result-url">
+  <div class="text-gray-600"> <%= @shortened_link %> </div>
+
+  <div class="flex mt-6 flex-row gap-2 justify-center">
+    <button
+      type="button"
+      class="rounded-full bg-indigo-600 px-3.5 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      onclick="copyToCB()"
+    >
+      Copy to Clipboard!
+    </button>
+    <%= link_to "Create Another One!", root_path, class: "rounded-full bg-indigo-600 px-3.5 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+  </div>
+</div>
