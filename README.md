@@ -1,24 +1,31 @@
-# README
+# HERASUFY 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HERASUFY - a link shortening service (from **減らす**: reduce, shorten)
 
-Things you may want to cover:
+## Installation prerequisites:
 
-* Ruby version
+- Ruby 3.2.2
+- Postgres 9.3
+- Specify db user and password in `config/database.yml` if necessary
 
-* System dependencies
+## Installation process: 
 
-* Configuration
+Install dependencies: 
+```
+bundle install
+```
 
-* Database creation
+Create & migrate database:
+```
+rake db:prepare
+```
 
-* Database initialization
+Start the development server & tailwindcss watcher:
+```
+./bin/dev
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Test with:
+```
+rails test
+```
